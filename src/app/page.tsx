@@ -26,7 +26,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-muted-foreground">
-              © 2024 Your Name. Built with Next.js, Tailwind CSS, and Framer Motion.
+              © 2025 Sulthan Syarif. Built with Next.js, Tailwind CSS, and Framer Motion.
             </p>
           </div>
         </div>

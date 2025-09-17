@@ -1,11 +1,40 @@
+/** @jsxImportSource react */
 "use client"
 
-import React from "react"
-import { motion } from "framer-motion"
+import React, { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, Download, ChevronDown, Instagram } from "lucide-react"
+import Image from "next/image"
 
 export function HomeSection() {
+  // Array of greetings in different languages
+  const greetings = [
+    { text: "Hello", language: "English" },
+    { text: "Hola", language: "Spanish" },
+    { text: "Bonjour", language: "French" },
+    { text: "Привет", language: "Russian" },
+    { text: "こんにちは", language: "Japanese" },
+    { text: "Halo", language: "Indonesian" },
+    { text: "Ciao", language: "Italian" },
+    { text: "Hallo", language: "German" },
+    { text: "안녕하세요", language: "Korean" },
+    { text: "你好", language: "Chinese" },
+    { text: "مرحبا", language: "Arabic" },
+    { text: "नमस्ते", language: "Hindi" }
+  ]
+
+
+  const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentGreetingIndex((prev) => (prev + 1) % greetings.length)
+    }, 1000) // Change every 1 second
+
+    return () => clearInterval(interval)
+  }, [greetings.length])
+
   const handleScroll = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
@@ -32,7 +61,20 @@ export function HomeSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <h2 className="text-lg text-muted-foreground mb-2">Hello, I&apos;m</h2>
+              <div className="text-lg text-muted-foreground mb-2 flex items-center">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentGreetingIndex}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {greetings[currentGreetingIndex].text}
+                  </motion.span>
+                </AnimatePresence>
+                <span>, I&apos;m</span>
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Sulthan Syarif
               </h1>
@@ -44,7 +86,7 @@ export function HomeSection() {
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               <h3 className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-4">
-                Full Stack Developer
+                Full Stack Developer / Graphic Designer
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                 Passionate about creating innovative web solutions and delivering 
@@ -110,10 +152,15 @@ export function HomeSection() {
                 }}
                 className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 p-1"
               >
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                  <div className="w-72 h-72 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-6xl font-bold text-muted-foreground">
-                    YN
-                  </div>
+                <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/photoprofile.webp"
+                    alt="Sulthan Syarif Profile Photo"
+                    width={288}
+                    height={288}
+                    className="w-72 h-72 rounded-full object-cover"
+                    priority
+                  />
                 </div>
               </motion.div>
               

@@ -98,7 +98,7 @@ export function AboutSection() {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Location</span>
-                    <span className="font-medium">Your City, Country</span>
+                    <span className="font-medium">Surabaya, Indonesian</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Experience</span>
@@ -110,7 +110,7 @@ export function AboutSection() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Languages</span>
-                    <span className="font-medium">English, Spanish</span>
+                    <span className="font-medium">English, Indonesian, Russian</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Availability</span>

@@ -38,10 +38,10 @@ const experiences = [
     technologies: ["Vue.js", "Express.js", "MongoDB", "Tailwind CSS", "Jest"]
   },
   {
-    title: "Frontend Developer",
-    company: "StartupXYZ",
+    title: "Full Stack Developer",
+    company: "Freelance",
     location: "Remote",
-    period: "Mar 2020 - May 2021",
+    period: "Mar 2024 - Present",
     type: "Contract",
     description: "Focused on creating intuitive user interfaces and implementing responsive designs. Worked closely with UX designers to bring mockups to life.",
     achievements: [
@@ -53,19 +53,19 @@ const experiences = [
     technologies: ["React", "Sass", "JavaScript", "Figma", "Git"]
   },
   {
-    title: "Junior Web Developer",
-    company: "WebDev Agency",
-    location: "New York, NY",
-    period: "Sep 2019 - Feb 2020",
-    type: "Full-time",
-    description: "Started my professional journey building websites for small businesses. Learned best practices in web development and client communication.",
+    title: "Full Stack Developer Intern",
+    company: "Indoweb ID",
+    location: "Kediri, Indonesia",
+    period: "Dec 2023 - Mar 2024",
+    type: "Internship",
+    description: "Worked on various web development projects, gaining hands-on experience with front-end and back-end technologies. Assisted in debugging and optimizing existing applications.",
     achievements: [
-      "Delivered 20+ client websites on time and within budget",
-      "Learned modern web development stack and best practices",
-      "Maintained 100% client satisfaction rating",
+      "Developed own websites local businesses",
+      "Scraping data from websites",
+      "Finding clients for the company",
       "Contributed to open-source projects in spare time"
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP"]
+    technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP","Figma","Laravel"]
   }
 ]
 
